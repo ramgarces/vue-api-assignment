@@ -10,7 +10,7 @@ const useVillagers = () => {
     const fetchVillagers = async (id) => {
         const { data } = await api.instance.get(`/villagers/${currentVillager}`)
         villagers.value.push(data)
-        currentVillager++
+        currentVillager = currentVillager + 12
     }
     
     return { villagers, fetchVillagers, currentVillager }

@@ -7,6 +7,7 @@ const props = defineProps({
       name: 'Unknown',
       species: 'Unknown',
       saying: 'Blank',
+      iconUrl: 'https://via.placeholder.com/150',
       imageUrl: 'https://via.placeholder.com/150', 
     }),
   },
@@ -16,7 +17,7 @@ const props = defineProps({
 <template>
   <RouterLink
     :to="`/villager/${props.villager.id}`"
-    class="rounded-lg bg-white shadow-lg"
+    class="rounded-lg bg-white shadow-lg flex-col"
   >
     <img 
       class="w-full rounded-t-lg object-cover"
@@ -32,6 +33,10 @@ const props = defineProps({
       <h2 class="text-2xl font-thin text-gray-800">
         <b class="font-semibold">Quote:</b> {{ props.villager.saying }}
       </h2>
+      <img 
+      class="w-full object-cover"
+      :src="props.villager.icon_uri"
+      />
     </div>
   </RouterLink>
 </template>
